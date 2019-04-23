@@ -30,17 +30,19 @@ $cHeadres = array(
          curl_close($ch);
          $dom = new simple_html_dom();
          $dom->load($str);
+	
          return $dom;
         }
        }
 //Main Code Start Here.
 //Total Pages in that site is 4995153
-for($page = 57279;$page <1199000; $page++)
+for($page = 1;$page <1199000; $page++)
  {
 	
 	
       $link ='https://e.fbr.gov.pk/Registration/searchDetail.aspx?crup='.$page;
       $maincode = dlPage($link);
+	$maincode= dlPage($link);
 	if($maincode)
 	{
       sleep(4);
